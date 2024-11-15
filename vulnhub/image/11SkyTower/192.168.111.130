@@ -1,0 +1,57 @@
+`└─# nmap -p- 192.168.111.130`
+`Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-11-14 19:01 CST`
+`Nmap scan report for 192.168.111.130`
+`Host is up (0.00038s latency).`
+`Not shown: 65532 closed tcp ports (reset)`
+`PORT     STATE    SERVICE`
+`22/tcp   filtered ssh`
+`80/tcp   open     http`
+`3128/tcp open     squid-http`
+`MAC Address: 00:0C:29:ED:6E:C8 (VMware)`
+
+`Nmap done: 1 IP address (1 host up) scanned in 2.63 seconds`
+
+
+
+
+
+`─# nmap -p22,80,3128 -A 192.168.111.130`
+`Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-11-14 19:11 CST`
+`Nmap scan report for 192.168.111.130`
+`Host is up (0.00032s latency).`
+
+`PORT     STATE    SERVICE    VERSION`
+`22/tcp   filtered ssh`
+`80/tcp   open     http       Apache httpd 2.2.22 ((Debian))`
+`|_http-title: Site doesn't have a title (text/html).
+3128/tcp open     http-proxy Squid http proxy 3.1.20
+|_http-title: ERROR: The requested URL could not be retrieved`
+`MAC Address: 00:0C:29:ED:6E:C8 (VMware)`
+`Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port`
+`Device type: general purpose`
+`Running: Linux 3.X`
+`OS CPE: cpe:/o:linux:linux_kernel:3`
+`OS details: Linux 3.2 - 3.16`
+`Network Distance: 1 hop`
+
+`TRACEROUTE`
+`HOP RTT     ADDRESS`
+`1   0.32 ms 192.168.111.130`
+
+
+
+
+
++----+---------------------+--------------+
+| id | email               | password     |
++----+---------------------+--------------+
+|  1 | john@skytech.com    | hereisjohn   |
+|  2 | sara@skytech.com    | ihatethisjob |
+|  3 | william@skytech.com | senseable    |
++----+---------------------+--------------+
+
+**Username: sara**
+**Password: ihatethisjob**
+
+**Username: william**
+**Password: senseable**

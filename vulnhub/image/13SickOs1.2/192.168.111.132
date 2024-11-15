@@ -1,0 +1,63 @@
+```
+└─# dirb  http://192.168.111.132/
+
+-----------------
+
+DIRB v2.22
+
+By The Dark Raver
+-----------------
+
+START_TIME: Fri Nov 15 08:42:18 2024
+URL_BASE: http://192.168.111.132/
+WORDLIST_FILES: /usr/share/dirb/wordlists/common.txt
+
+-----------------
+
+GENERATED WORDS: 4612
+
+---- Scanning URL: http://192.168.111.132/ ----
+
++ http://192.168.111.132/index.php (CODE:200|SIZE:163)
+  ==> DIRECTORY: http://192.168.111.132/test/
+
+---- Entering directory: http://192.168.111.132/test/ ----
+(!) WARNING: Directory IS LISTABLE. No need to scan it.
+    (Use mode '-w' if you want to scan it anyway)
+
+-----------------
+
+END_TIME: Fri Nov 15 08:42:21 2024
+DOWNLOADED: 4612 - FOUND: 1
+
+
+
+
+└─# nikto -host 192.168.111.132 -p 80
+- Nikto v2.5.0
+---------------------------------------------------------------------------
++ Target IP:          192.168.111.132
++ Target Hostname:    192.168.111.132
++ Target Port:        80
++ Start Time:         2024-11-15 08:41:25 (GMT8)
+---------------------------------------------------------------------------
++ Server: lighttpd/1.4.28
++ /: Retrieved x-powered-by header: PHP/5.3.10-1ubuntu3.21.
++ /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
++ /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/
++ No CGI Directories found (use '-C all' to force check all possible dirs)
++ OPTIONS: Allowed HTTP Methods: OPTIONS, GET, HEAD, POST .
++ /?=PHPB8B5F2A0-3C92-11d3-A3A9-4C7B08C10000: PHP reveals potentially sensitive information via certain HTTP requests that contain specific QUERY strings. See: OSVDB-12184
++ /?=PHPE9568F36-D428-11d2-A769-00AA001ACF42: PHP reveals potentially sensitive information via certain HTTP requests that contain specific QUERY strings. See: OSVDB-12184
++ /?=PHPE9568F34-D428-11d2-A769-00AA001ACF42: PHP reveals potentially sensitive information via certain HTTP requests that contain specific QUERY strings. See: OSVDB-12184
++ /?=PHPE9568F35-D428-11d2-A769-00AA001ACF42: PHP reveals potentially sensitive information via certain HTTP requests that contain specific QUERY strings. See: OSVDB-12184
++ /test/: Directory indexing found.
++ /test/: This might be interesting.
++ /#wp-config.php#: #wp-config.php# file found. This file contains the credentials.
++ 8102 requests: 0 error(s) and 11 item(s) reported on remote host
++ End Time:           2024-11-15 08:41:37 (GMT8) (12 seconds)
+---------------------------------------------------------------------------
++ 1 host(s) tested
+
+```
+
